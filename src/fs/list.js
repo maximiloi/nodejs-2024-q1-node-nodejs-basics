@@ -8,11 +8,11 @@ const ERROR_MESSAGE = 'FS operation failed';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const folder = join(__dirname, FOLDER_NAME);
+const folderPath = join(__dirname, FOLDER_NAME);
 
 const list = async () => {
   try {
-    const files = await readdir(folder);
+    const files = await readdir(folderPath);
     console.log(files);
   } catch {
     throw new Error(ERROR_MESSAGE);
