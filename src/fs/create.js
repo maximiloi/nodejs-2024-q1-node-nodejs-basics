@@ -16,12 +16,12 @@ const create = async () => {
     if (err) {
       if (err.code === 'ENOENT') {
         writeFile(filePath, TEXT, (err) => {
-          if (err) console.log(err);
+          if (err) throw new Error(err);
           else console.log(`file ${FILE_NAME} created success`);
         });
       }
     } else {
-      console.log(ERROR_MESSAGE);
+      throw new Error(ERROR_MESSAGE);
     }
   });
 };
